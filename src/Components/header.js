@@ -9,7 +9,6 @@ import {
   } from "react-router-dom";
 import Index from "../Pages/Index";
 import Movies from "../Pages/Movies";
-import Books from "../Pages/Books";
 import Signin from "../Pages/Signin";
 import Contacts from "../Pages/Contacts";
 import Content from "../Pages/Content";
@@ -75,8 +74,7 @@ export default class Header extends Component{
 
     <Route exact path = "/" component = {Index}/>
     <Route exact path = "/Movies" component = {Movies}/>
-    <Route exact path = "/Books" component = {Books}/>
-    <Route exact path = "/Signin" component = {Signin}/>
+     <Route exact path = "/Signin" component = {Signin}/>
     <Route exact path = "/Contacts" component = {Contacts}/>
     <Route exact path = "/Content" component = {Content}/>
     <Route exact path = "/Register" component = {Registration}/>

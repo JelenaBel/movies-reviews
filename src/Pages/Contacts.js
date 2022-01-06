@@ -8,6 +8,7 @@ import {
     Link
   } from "react-router-dom";
 
+
 export default class Contacts extends Component {
     render(){
         return (

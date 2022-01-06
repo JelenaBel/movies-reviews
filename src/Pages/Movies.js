@@ -53,26 +53,23 @@ function Movies (){
                 rows.push(
                
            
-            <div class="col-container" style={{ display: "table" }}>
-            <Col xs style={{ display: "table-cell" }}>
+            <div class="col-container" >
+            <Col xs >
         
             
-                <Card style={{ width: '70%', marginBottom: "20px" }} inlineBlock="true">
+                <Card style={{ width: '80%', marginBottom: "20px" }} inlineBlock="true">
         
                     <Card.Img variant="top" src={"/img/" + movies[i].image} />
                     <Card.Body>
-                        <Card.Title>{movies[i].name}</Card.Title>
-                        <Card.Text>
-                        {movies[i].category}
-                        </Card.Text>
-        
-        
+                    <Card.Title>{movies[i].name}</Card.Title>
+                    <Card.Text>{movies[i].category}</Card.Text>  
+                                
                         <Rating 
                             name="customized-10" style={{ marginBottom: '20px' }} defaultValue={movies[i].imbdrating} size="small"  max={10} />
         
         
                         <Navbar.Text inlineblock='true'>
-                            <a href={"/Content?movie" + movies[i].id} style={{ textAlign: 'center', whiteSpace: 'nowrap', textDecoration: 'none', color: 'white', paddingLeft: '20px', paddingRight: '20px', paddingTop: '10px', paddingBottom: '10px', marginleft: "30px", marginTop: "20px", background: 'blue' }}
+                            <a href={"/Content?movie"+ movies[i].id} style={{ textAlign: 'center', whiteSpace: 'nowrap', textDecoration: 'none', color: 'white', paddingLeft: '20px', paddingRight: '20px', paddingTop: '10px', paddingBottom: '10px', marginleft: "30px", marginTop: "20px", background: 'blue' }}
                             >Read more</a>
                         </Navbar.Text>
         

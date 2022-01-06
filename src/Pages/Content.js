@@ -5,7 +5,7 @@ import Comments from "../Pages/Comments"
 import Rating from '@mui/material/Rating';
 export default Content;
 
-function Content (props) {
+function Content () {
     const queryString = window.location.search;
     console.log (queryString)
     var idst = queryString.substring(6, );
@@ -15,7 +15,7 @@ function Content (props) {
   
     const [movies, setMovies] = useState([]);
       useEffect(() => {
-        fetchItems();
+        fetchItems()
       }, [])
      
       const fetchItems = () => {
@@ -49,6 +49,7 @@ function Content (props) {
                     </div>
                     <div className="col-lg-6">
                       <h1 className="display-5 fw-bold lh-1 mb-3" variant="top">{movies[i].name}</h1>
+                      <p className="lead"> {movies[i].category}</p>
                                             <Rating 
                             name="customized-10" style={{ marginBottom: '20px' }} defaultValue={movies[i].imbdrating} size="small"  max={10} />
          <p className="lead"> IMDB Rating:  {movies[i].imbdrating}</p>
@@ -75,6 +76,8 @@ function Content (props) {
             }
 
             const [comment, setComment] = useState({comment: '',  movieid:'', userid: ''});
+            const [comText, setComText] = useState({comText: ''});
+            
             const handleSave = () => {
         
                addComment(comment);
@@ -82,9 +85,13 @@ function Content (props) {
                
               }
               
-        
+              
               const inputChanged = (event) => {
-                setComment({...comment, [event.target.name]: event.target.value});
+                
+                var newcom = event.target.value;
+                console.log (newcom);
+               
+                setComment({comment: newcom, movieid : id, userid: 'Elena'});
               }
              
               const addComment = (newComment) => {
@@ -103,29 +110,33 @@ function Content (props) {
             <>
             {MoviesList(movies)}
             
-          <div class="container">
-    <div class="d-flex justify-content-center row">
-        <div class="d-flex flex-column col-md-8">
-            <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
-                <div class="d-flex flex-column ml-3">
-                    
-                    <div class="d-flex flex-row align-items-center align-content-center post-title">
-                               <span class="mr-2 comments">13 comments</span>
-                               <div class="coment-bottom bg-white p-2 px-4">
-                        </div>
-                        </div>
-                        
-                        
-                        <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                        <input type="text" name ="comment" id = "floatingComment" class="form-control mr-3"  style ={{width: '80%'}} placeholder="Add comment" onChange = {inputChanged} />
-                        <button class="btn btn-primary"  style ={{marginLeft: '20px'}} type="button" onClick = {handleSave}>Comment</button></div>
-               </div>
+          <div className="container">
+    <div className="d-flex justify-content-center row">
+        <div className="d-flex flex-column col-md-8">
+            
                 
+                    <h1> Reviews</h1>
+                    <hr></hr>
+                    <div className="d-flex flex-row align-items-center align-content-center post-title">
+
+                               <h4>Write your review</h4>
+                               <br></br>
+                              
+                        </div>
+                        
+                        <br></br>
+                        
+                        <textarea rows = "6" style = {{width:'100%'}} name ="comment" id = "floatingComment" className="form-control mr-3"  style ={{width: '80%'}} placeholder="Write review here..." onChange = {inputChanged} target = "blanc"/>
+                        <br/>
+                        <button className="btn btn-secondary"  style = {{width:'50%'}}  type="button" onClick = {handleSave}>Publish</button></div>
+              
+                
+            
+           
             </div>
             </div>
-            </div>
-            </div>
-    
+
+    <Comments> </Comments>
        </>
             
         )

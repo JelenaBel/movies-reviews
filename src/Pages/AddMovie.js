@@ -34,35 +34,35 @@ export default AddMovie;
                   <br></br>
                   <br></br>
                  <h1 className = "text-center">Add movie</h1>
-                 <br></br><div class="container col-xxl-8 px-4 py-5">
+                 <br></br><div className="container col-xxl-8 px-4 py-5">
                 
                  <Container>
-                 <Form class="p-4 p-md-5 border rounded-3 bg-light"  >
-              <div class="form-floating mb-3">
-            <input type="name" class="form-control" id="floatingName" name="name" value={movie.name}   onChange={inputChanged} placeholder="Movie name"/>
+                 <Form className="p-4 p-md-5 border rounded-3 bg-light"  >
+              <div className="form-floating mb-3">
+            <input type="name" className="form-control" id="floatingName" name="name" value={movie.name}   onChange={inputChanged} placeholder="Movie name"/>
             <label for="floatingName">Movie name</label>
           </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingImage" value={movie.image}  onChange={inputChanged} name="image" placeholder="Image name"/>
+          <div className="form-floating mb-3">
+            <input type="category" className="form-control" id="floatingCategory" value={movie.category}  onChange={inputChanged} name="category" placeholder="Category"/>
+            <label for="floatingCategory">Category</label>
+          </div>
+          <div className="form-floating mb-3">
+            <input type="text" className="form-control" id="floatingImage" value={movie.image}  onChange={inputChanged} name="image" placeholder="Image name"/>
             <label for="floatingImage">Picture name</label>
           </div>
-          <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingCategory" value={movie.category}  onChange={inputChanged} name="shortdescription" placeholder=">Category"/>
-            <label for="floatingCategory">Category</label>
-          
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingShortdescription" value={movie.shortdescription}  onChange={inputChanged} name="shortdescription" placeholder="Short description"/>
+         
+          <div className="form-floating mb-3">
+            <input type="text" className="form-control" id="floatingShortdescription" value={movie.shortdescription}  onChange={inputChanged} name="shortdescription" placeholder="Short description"/>
             <label for="floatingShortdescription">Short description</label>
           </div>
                    
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingImbdrating" value={movie.imbdrating}  onChange={inputChanged} name="imbdrating" placeholder="Short description"/>
+          <div className="form-floating mb-3">
+            <input type="text" className="form-control" id="floatingImbdrating" value={movie.imbdrating}  onChange={inputChanged} name="imbdrating" placeholder="Short description"/>
             <label for="floatingImbdrating">Imbd Rating</label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit" onClick={handleSave}>Add</button>
-          <hr class="my-4"></hr>
-          <small class="text-muted">Pleace remember to copy image to "movies-reviews/public/img" folder on admin computer</small>
+          <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleSave}>Add</button>
+          <hr className="my-4"></hr>
+          <small className="text-muted">Pleace remember to copy image to "movies-reviews/public/img" folder on admin computer</small>
           
 
         </Form>
